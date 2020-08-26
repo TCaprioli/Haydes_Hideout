@@ -1,5 +1,9 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap'
+import 
+{ Container,
+  Row,
+  Col,
+  Button } from 'react-bootstrap'
 import logo from '../media/logo.jpg'
 import portrait from '../media/portrait.jpg'
 import boyShirt from '../media/boy-shirt.jpg'
@@ -19,7 +23,7 @@ export const Home = () => {
       <Row >
         <h2 style={{margin: "auto", color: "#4c9b9e", }}>Products You'll Love</h2>
       </Row>
-      <Row xl={3} lg={3} md={3}  style={{ padding: "0px", marginTop: "50px"}}>
+      <Row xl={3} lg={3} md={3}  style={{ padding: "0px", margin: "50px 0px 50px 0px"}}>
         <Col style={{padding: "0px"}}>
           <img src={boyShirt} alt="" style={{width: "90%"}}/>
         </Col>
@@ -30,9 +34,12 @@ export const Home = () => {
           <img src={bow} alt="" style={{width: "90%"}}/>
         </Col>
       </Row>
+      <Row>
+        <Button size="lg" style={{backgroundColor: "#5FCFC8", margin: "auto", borderColor: "#5FCFC8"}} >See Catalog</Button>
+      </Row>
     </Container>
 
-    <Container id="About" style={{ marginTop: "180px"}} data-aos="fade-in">
+    <Container id="About" style={{ marginTop: "180px", marginBottom: "180px"}} data-aos="fade-in">
       <Row sm={1} md={1} lg={2}>
         <Col xl={5} lg={6}>
           <img  className="rounded" src={portrait} alt="portrait" style={{width: "100%"}} />

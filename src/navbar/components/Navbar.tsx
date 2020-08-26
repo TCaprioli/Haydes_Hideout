@@ -25,12 +25,12 @@ export const NavBar = () => {
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="ml-auto" style={{textAlign: "right"}}>
       <NavDropdown style={{fontSize: "20px"}} title="Products" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#action/3.2">Boys</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Girls</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.1">Boys</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.2">Girls</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Accessories</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Seasonal</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.4">Seasonal</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">All Products</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.5">All Products</NavDropdown.Item>
       </NavDropdown>
       <Nav.Link href="#home" style={{marginRight: "0px", fontSize: "20px" }}>
         <FontAwesomeIcon icon={faShoppingCart}/> Cart (0)
