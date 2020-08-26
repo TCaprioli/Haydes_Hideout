@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from '../media/logo.jpg'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+
 
 export const NavBar = () => {
   return(
@@ -20,7 +23,9 @@ export const NavBar = () => {
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
       </NavDropdown>
-      <Nav.Link href="#home" style={{marginRight: "20px", fontSize: "20px" }}>Cart (0)</Nav.Link>
+      <Nav.Link href="#home" style={{marginRight: "0px", fontSize: "20px" }}>
+        <FontAwesomeIcon icon={faShoppingCart}/> Cart (0)
+      </Nav.Link>
     </Nav>
     </Navbar.Collapse>
     </Navbar>

@@ -7,6 +7,10 @@ import { Home } from './home/components/Home'
 import { NavBar } from './navbar/components/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init({duration:3000})
 
 ReactDOM.render(
   <Provider store={store}>
