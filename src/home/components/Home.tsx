@@ -4,6 +4,7 @@ import
   Row,
   Col,
   Button } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 import logo from '../media/logo.jpg'
 import portrait from '../media/portrait.jpg'
 import boyShirt from '../media/boy-shirt.jpg'
@@ -35,7 +36,9 @@ export const Home = () => {
         </Col>
       </Row>
       <Row>
-        <Button size="lg" style={{backgroundColor: "#5FCFC8", margin: "auto", borderColor: "#5FCFC8"}} >See Catalog</Button>
+        <NavLink to="/products" style={{margin: "auto"}}>
+          <Button size="lg" style={{backgroundColor: "#5FCFC8", borderColor: "#5FCFC8"}} >See Catalog</Button>
+        </NavLink>
       </Row>
     </Container>
 

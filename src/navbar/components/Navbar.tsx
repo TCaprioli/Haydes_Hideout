@@ -9,6 +9,7 @@ import
   FormControl,
   Button
 } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
@@ -18,19 +19,29 @@ export const NavBar = () => {
     <>
 
     <Navbar expand="lg">
-      <Navbar.Brand href="/">
+      <NavLink className="navbar-brand" exact to="/">
         <img src={logo} alt="logo" style={{marginLeft: "80px"}}/>
-      </Navbar.Brand>
+      </NavLink>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="ml-auto" style={{textAlign: "right"}}>
       <NavDropdown style={{fontSize: "20px"}} title="Products" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Boys</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Girls</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Accessories</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.4">Seasonal</NavDropdown.Item>
+        <NavLink className="dropdown-item" exact to="/products/boys">
+          Boys
+        </NavLink>
+        <NavLink className="dropdown-item" exact to="/products/girls">
+          Girls
+        </NavLink>
+        <NavLink className="dropdown-item" exact to="/products/accessories">
+          Accessories
+        </NavLink>
+        <NavLink className="dropdown-item" exact to="/products/seasonals">
+          Seasonal
+        </NavLink>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.5">All Products</NavDropdown.Item>
+        <NavLink className="dropdown-item" exact to="/products">
+          All Products
+        </NavLink>
       </NavDropdown>
       <Nav.Link href="#home" style={{marginRight: "0px", fontSize: "20px" }}>
         <FontAwesomeIcon icon={faShoppingCart}/> Cart (0)

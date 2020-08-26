@@ -1,10 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store'
 import { Home } from './home/components/Home'
 import { NavBar } from './navbar/components/Navbar'
+import { BoyProducts } from './shop/components/Boys'
+import { GirlProducts } from './shop/components/Girls'
+import { AccessoryProducts } from './shop/components/Accessories'
+import { SeasonalProducts } from './shop/components/Seasonal'
+import { AllProducts } from './shop/components/Products'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 import AOS from 'aos';
@@ -17,7 +23,15 @@ ReactDOM.render(
     <Router>
       <div>
         <NavBar/>
-        <Route exact path="/" component={Home}/>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/products/boys" component={BoyProducts}/>
+          <Route exact path="/products/girls" component={GirlProducts}/>
+          <Route exact path="/products/accessories" component={AccessoryProducts}/>
+          <Route exact path="/products/seasonals" component={SeasonalProducts}/>
+          <Route exact path="/products" component={AllProducts}/>
+
+        </Switch>
       </div>
     </Router>
   </Provider>,
