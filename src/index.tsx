@@ -10,7 +10,7 @@ import { GirlProducts } from './shop/components/Girls'
 import { AccessoryProducts } from './shop/components/Accessories'
 import { SeasonalProducts } from './shop/components/Seasonal'
 import { AllProducts } from './shop/components/Products'
-
+import { Cart } from './cart/components/Cart'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 import AOS from 'aos';
@@ -30,6 +30,8 @@ ReactDOM.render(
           <Route exact path="/products/accessories" component={AccessoryProducts}/>
           <Route exact path="/products/seasonals" component={SeasonalProducts}/>
           <Route exact path="/products" component={AllProducts}/>
+          <Route exact path="/cart" component={Cart}/>
+
 
         </Switch>
       </div>

@@ -43,9 +43,9 @@ export const NavBar = () => {
           All Products
         </NavLink>
       </NavDropdown>
-      <Nav.Link href="#home" style={{marginRight: "0px", fontSize: "20px" }}>
+      <NavLink className="nav-link" to="/cart" style={{ fontSize: "20px", textDecoration: "none" }}>
         <FontAwesomeIcon icon={faShoppingCart}/> Cart (0)
-      </Nav.Link>
+      </NavLink>
     </Nav>
     <Form inline>
       <Col>
