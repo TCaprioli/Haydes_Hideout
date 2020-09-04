@@ -12,19 +12,30 @@ import
 import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { connect } from 'react-redux'
+import { inputSlice } from "../reducers/inputSlice"
 
 
-export const NavBar = () => {
+const NavBar = (props: any) => {
+  console.log(props)
+  let handleOnChange = (event: any) =>{
+    return props.input(event.target.value)
+  }
   return(
     <>
-
     <Navbar expand="lg">
       <NavLink className="navbar-brand" exact to="/">
-        <img src={logo} alt="logo" style={{marginLeft: "80px"}}/>
+        <img src={logo} alt="logo" />
       </NavLink>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="ml-auto" style={{textAlign: "right"}}>
+    <Form inline>
+      <Col>
+        <FormControl value={props.state.input} onChange={handleOnChange}/>
+        <Button variant="outline-success">Search</Button>
+      </Col>
+    </Form>
       <NavDropdown style={{fontSize: "20px"}} title="Products" id="basic-nav-dropdown">
         <NavLink className="dropdown-item" exact to="/products/boys">
           Boys
@@ -43,16 +54,14 @@ export const NavBar = () => {
           All Products
         </NavLink>
       </NavDropdown>
-      <NavLink className="nav-link" to="/cart" style={{ fontSize: "20px", textDecoration: "none" }}>
-        <FontAwesomeIcon icon={faShoppingCart}/> Cart (0)
-      </NavLink>
+   
+    <NavLink className="nav-link" to="/cart" style={{ fontSize: "20px", textDecoration: "none" }}>
+        <FontAwesomeIcon icon={faShoppingCart}/> Cart ({props.state.counter})
+    </NavLink>
+    <NavLink className="nav-link" to="/login" style={{ fontSize: "20px", textDecoration: "none" }}>
+        <Button style={{backgroundColor: "#5FCFC8", border: "#5FCFC8"}}>Login</Button>
+    </NavLink>
     </Nav>
-    <Form inline>
-      <Col>
-        <FormControl/>
-        <Button variant="outline-success">Search</Button>
-      </Col>
-    </Form>
     </Navbar.Collapse>
     </Navbar>
     
@@ -61,3 +70,5 @@ export const NavBar = () => {
     </>
   )
 }
+
+export default connect(state=>({state}),inputSlice.actions)(NavBar)

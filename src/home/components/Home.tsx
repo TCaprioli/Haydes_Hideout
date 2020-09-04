@@ -12,13 +12,28 @@ import girlShirt from '../media/girl-shirt.jpg'
 import bow from '../media/bow.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faInstagramSquare, faFacebookF, faPinterest} from '@fortawesome/free-brands-svg-icons'
+import {connect} from 'react-redux';
+import { navCountSlice } from '../../navbar/reducers/cartCount'
 
 
-export const Home = () => {
+const Home = (props: any) => {
+  let buy= () =>{
+    return props.increment()
+  }
+  let sell =()=>{
+    if(props.state.counter > 0) props.decrement()
+  }
+  let reset=()=>{
+    return props.reset()
+  }
   return(
     <>
     
     <img src={logo} alt="logo" style={{width: "100%"}}/>
+
+    <Button onClick={buy}>Buy</Button>
+    <Button onClick={sell}>Sell</Button>
+    <Button onClick={reset}>Reset</Button>
 
     <Container style={{ marginTop: "180px", padding: "0px"}} data-aos="fade-up">
       <Row >
@@ -57,15 +72,17 @@ export const Home = () => {
     </Container>
 
     <Container fluid style={{backgroundColor: "#5FCFC8"}}>
-      <Row >
-        <Col style={{padding: "20px", marginLeft: "30px"}}>
+      <Row>
+        <Col xl={9} lg={9} md={8} sm={6} xs={6} >
         <FontAwesomeIcon icon={faInstagramSquare} size="2x" />
         <FontAwesomeIcon icon={faFacebookF} size="2x" style={{marginLeft: "10px"}}/>
         <FontAwesomeIcon icon={faPinterest} size="2x" style={{marginLeft: "10px"}}/>
         </Col>
-        <p style={{margin: "20px 20px 0px 0px"}}>Built and Designed by Tyler Caprioli</p>
+        <p style={{margin: "5px 0px 0px 15px"}}>Built and Designed by Tyler Caprioli</p>
       </Row>
     </Container>
     </>
   )
 }
+
+export default connect(state=>({state}), navCountSlice.actions)(Home)
