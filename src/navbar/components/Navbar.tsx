@@ -58,9 +58,6 @@ const NavBar = (props: any) => {
     <NavLink className="nav-link" to="/cart" style={{ fontSize: "20px", textDecoration: "none" }}>
         <FontAwesomeIcon icon={faShoppingCart}/> Cart ({props.state.counter})
     </NavLink>
-    <NavLink className="nav-link" to="/login" style={{ fontSize: "20px", textDecoration: "none" }}>
-        <Button style={{backgroundColor: "#5FCFC8", border: "#5FCFC8"}}>Login</Button>
-    </NavLink>
     </Nav>
     </Navbar.Collapse>
     </Navbar>

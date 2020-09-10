@@ -32,7 +32,6 @@ ReactDOM.render(
           <Route exact path="/products/seasonals" component={SeasonalProducts}/>
           <Route exact path="/products" component={AllProducts}/>
           <Route exact path="/cart" component={Cart}/>
-          <Route exact path="/login" component={AdminForm}/>
 
 
         </Switch>
