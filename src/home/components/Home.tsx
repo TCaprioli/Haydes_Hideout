@@ -74,9 +74,9 @@ const Home = (props: any) => {
     <Container fluid style={{backgroundColor: "#5FCFC8"}}>
       <Row>
         <Col xl={9} lg={9} md={8} sm={6} xs={6} >
-        <FontAwesomeIcon icon={faInstagramSquare} size="2x" />
-        <FontAwesomeIcon icon={faFacebookF} size="2x" style={{marginLeft: "10px"}}/>
-        <FontAwesomeIcon icon={faPinterest} size="2x" style={{marginLeft: "10px"}}/>
+        <a style={{color: "inherit"}} href="https://www.instagram.com/haydes_hideout/" target="_blank"><FontAwesomeIcon icon={faInstagramSquare} size="2x" /></a>
+        <a style={{color: "inherit"}} href="https://www.facebook.com/haydeshideout" target="_blank"><FontAwesomeIcon icon={faFacebookF} size="2x" style={{marginLeft: "10px"}}/></a>
+        <a style={{color: "inherit"}} href="https://www.pinterest.com/joscelynq/" target="_blank"><FontAwesomeIcon icon={faPinterest} size="2x" style={{marginLeft: "10px"}}/></a>
         </Col>
         <p style={{margin: "5px 0px 0px 15px"}}>Built and Designed by Tyler Caprioli</p>
       </Row>
