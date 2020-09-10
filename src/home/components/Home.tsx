@@ -31,9 +31,6 @@ const Home = (props: any) => {
     
     <img src={logo} alt="logo" style={{width: "100%"}}/>
 
-    <Button onClick={buy}>Buy</Button>
-    <Button onClick={sell}>Sell</Button>
-    <Button onClick={reset}>Reset</Button>
 
     <Container style={{ marginTop: "180px", padding: "0px"}} data-aos="fade-up">
       <Row >
